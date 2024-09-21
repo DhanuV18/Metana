@@ -1,16 +1,16 @@
-// src/components/FormEditor.js
 import React, { useState } from 'react';
 import StepsSidebar from './StepsSidebar';
 import FormPreview from './FormPreview';
 // import './FormEditor.css';
 
 const FormEditor = () => {
-  // State for welcome screen name and email
-  const [welcomeScreenName, setWelcomeScreenName] = useState('Welcome to our form');
+
+  const [welcomeScreenName, setWelcomeScreenName] = useState('');
+  const [pageName,setPageName] = useState('');
   const [email, setEmail] = useState('');
   const [emailError, setEmailError] = useState('');
 
-  // Function to handle email validation
+
   const validateEmail = (email) => {
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailPattern.test(email);
@@ -27,16 +27,18 @@ const FormEditor = () => {
 
   return (
     <div className="form-editor-container">
-      {/* Sidebar for editing form details */}
+
       <StepsSidebar
         welcomeScreenName={welcomeScreenName}
         setWelcomeScreenName={setWelcomeScreenName}
+        pageName={pageName}
+        setPageName={setPageName}
         email={email}
         setEmail={handleEmailChange}
         emailError={emailError}
       />
-      {/* Preview section displaying form details */}
-      <FormPreview welcomeScreenName={welcomeScreenName} email={email} />
+
+      <FormPreview welcomeScreenName={welcomeScreenName} pageName={pageName} email={email} />
     </div>
   );
 };

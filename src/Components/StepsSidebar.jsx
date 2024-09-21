@@ -2,20 +2,27 @@
 import React from 'react';
 // import './StepsSidebar.css';
 
-const StepsSidebar = ({ welcomeScreenName, setWelcomeScreenName, email, setEmail, emailError }) => {
+const StepsSidebar = ({ welcomeScreenName, setWelcomeScreenName, pageName, setPageName, email, setEmail, emailError }) => {
   return (
     <div className="steps-sidebar">
-      <h3>Steps</h3>
+      <h3>DashBoard</h3>
       
-      {/* Input for Welcome Screen Name */}
+  
       <div className="form-group">
-        <label>Welcome Screen Name</label>
+        <label>Welcome to Dashboard</label>
         <input
           type="text"
           value={welcomeScreenName}
           onChange={(e) => setWelcomeScreenName(e.target.value)}
-          placeholder="Enter Welcome Screen Name"
+          placeholder="Welcome Screen"
         />
+          <input
+          type="text"
+          value={pageName}
+          onChange={(e) => setPageName(e.target.value)}
+          placeholder="Enter your name"
+        />
+ 
       </div>
 
       {/* Input for Email with Validation */}
